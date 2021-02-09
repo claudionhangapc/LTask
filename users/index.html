@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <title>Users</title>
+</head>
+<body>
+  <!-- Cabeçalho-->
+  <header>
+    <nav class="nav-header">
+      <div class="nav-header-left">
+        <div class="div-munu-hamburg">
+          <input type="checkbox" id="menu-check">
+          <label  for="menu-check">
+            <i class="fa fa-bars 2x" id="icon-menu">
+            </i>
+          </label>
+        </div>
+        <div class="logo">
+          <a href="">
+            <span>L</span>Task
+          </a>
+        </div>
+      </div>
+      <div class="nav-header-right">
+        <div class="div-search">
+          <span class="span-icon-search">
+            <i  class="fa fa-search fa-1x fa-rotate-90"></i>
+          </span>
+          <input type="text" placeholder="Buscar">  
+        </div>
+        <div class="nav-header-right-info">
+           <div class="div-plus-sign">
+             <span>
+              <i  class="fa fa-plus "></i>
+             </span>
+           </div>
+           <div class="nav-header-right-info-name">
+             <span>Claudio João Andre ...</span>
+           </div>
+           <div class="div-img-perfil">
+             <img src="" alt="">
+           </div>
+        </div>   
+      </div>
+    </nav>
+  </header>
+  <!-- Fim Cabeçalho-->
+
+  <!-- Container-->
+  <div class="continer" id="app">
+    <!-- Container-Left -->
+    <section class="continer-left">
+      <nav class="continer-left-nav">
+        <ul>
+          <li class="continer-left-nav-li">
+            <a href="" class="">
+              <p>
+                <i  class="fa fa-home" aria-hidden="true"></i>
+                <span>Home</span>
+              </p>
+            </a>
+          </li>
+          <li class="continer-left-nav-li">
+            <a href="">
+              <p>
+                <i  class="fa fa-list"></i>
+                <span>Task</span>
+              </p>
+            </a>
+          </li>
+          <li class="continer-left-nav-li">
+            <a href="">
+              <p>
+                <i  class="fa fa-star "></i>
+                <span>Importantes</span>
+              </p>
+            </a>
+          </li>
+          <li class="li-border">
+            <button class="button-dropdown continer-left-nav-li" v-on:click="activate=!activate">
+              <p>
+                <i v-bind:class="[activate?'fa fa-folder-open':'fa fa-folder' ]"></i>
+                <span>Projetos</span>
+              </p>
+              <span class="margin-right-10">
+                <i  class="fa fa-plus "></i>
+               </span>
+            </button>
+            <ul class="ul-dropdown" v-if="activate">
+              <li class="continer-left-nav-li">
+                <a href="">
+                  <p>
+                    <span class="ul-dropdown-span-i">
+                      <i  class="fa fa-circle"></i>
+                    </span>
+                    <span class="ul-dropdown-span-text" >
+                      Trabalhando com Java 
+                    </span>
+                  </p>
+                </a>
+              </li>
+              <li class="continer-left-nav-li">
+                <a href="">
+                  <p>
+                    <span class="ul-dropdown-span-i">
+                      <i  class="fa fa-circle"></i>
+                    </span>
+                    <span class="ul-dropdown-span-text" >
+                      Algoritmos e estruturasde dados
+                    </span>
+                  </p>
+                </a>
+              </li>
+              <li class="continer-left-nav-li">
+                <a href="">
+                  <p>
+                    <span class="ul-dropdown-span-i">
+                      <i  class="fa fa-circle"></i>
+                    </span>
+                    <span class="ul-dropdown-span-text">
+                      Entendendo servidores
+                    </span>
+                  </p>
+                </a>
+              </li>
+            </ul>  
+          </li>
+        </ul>
+      </nav>
+
+    </section>
+    <!-- Fim-Container-Left -->
+
+    <!-- Container-Right -->
+    <section class="continer-right">
+      <div class="container-task">
+        <h2 class="container-task-titulo">Tasks</h2>
+        <div>
+          <p class="p-add-tarefa">
+            <span class="p-add-tarefa-text-i">
+              <i  class="fa fa-plus "></i>
+            </span>
+            <span class="p-add-tarefa-text">
+              Adicionar tarefa
+            </span>
+          </p>
+        </div>
+      </div>
+      <ul class="">
+        <li class="li-content-tesk flex-box-row flex-box-align-items-center justify-content-space-between border-botton task-li">
+            <div class="flex-box-row flex-box-align-items-center">
+              <div>
+                <span>
+                  <i  class="fa fa-circle-o"></i>
+                </span>
+              </div>
+              <div class="margin-left-20 ">
+                <p class="li-content-tesk-p-title">
+                  Trabalhando com java
+                </p>
+                <div  class="flex-box-row li-content-tesk-div-info">
+                  <div class="margin-right-20">
+                    <span><i  class="fa fa-folder-o"></i></span>
+                    <span>programacao</span>
+                  </div>
+                  <div class="margin-right-20">
+                    <span><i  class="fa fa-bell-o"></i></span>
+                  </div>
+                  <div class="margin-right-20">
+                    <span><i  class="fa fa-calendar"></i></span>
+                    <span>Domingo, Fevereiro 17</span>
+                  </div>
+                  <div class="margin-right-20">
+                    <span><i  class="fa fa fa-circle-o"></i></span>
+                    <span>Categoria</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="div-content-tesk-star">
+              <span>
+                <span><i  class="fa fa fa-star-o"></i></span>
+              </span>
+            </div>
+        </li>
+        <li class="li-content-tesk flex-box-row flex-box-align-items-center justify-content-space-between border-botton task-li">
+          <div class="flex-box-row flex-box-align-items-center">
+            <div>
+              <span>
+                <i  class="fa fa-circle-o"></i>
+              </span>
+            </div>
+            <div class="margin-left-20 ">
+              <p class="li-content-tesk-p-title">
+                Trabalhando com java
+              </p>
+              <div  class="flex-box-row li-content-tesk-div-info">
+                <div class="margin-right-20">
+                  <span><i  class="fa fa-folder-o"></i></span>
+                  <span>programacao</span>
+                </div>
+                <div class="margin-right-20">
+                  <span><i  class="fa fa-bell-o"></i></span>
+                </div>
+                <div class="margin-right-20">
+                  <span><i  class="fa fa-calendar"></i></span>
+                  <span>Domingo, Fevereiro 17</span>
+                </div>
+                <div class="margin-right-20">
+                  <span><i  class="fa fa fa-circle-o"></i></span>
+                  <span>Categoria</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-content-tesk-star">
+            <span>
+              <span><i  class="fa fa fa-star-o"></i></span>
+            </span>
+          </div>
+        </li>
+        <li class="li-content-tesk flex-box-row flex-box-align-items-center justify-content-space-between border-botton task-li">
+          <div class="flex-box-row flex-box-align-items-center">
+            <div>
+              <span>
+                <i  class="fa fa-circle-o"></i>
+              </span>
+            </div>
+            <div class="margin-left-20 ">
+              <p class="li-content-tesk-p-title">
+                Trabalhando com java
+              </p>
+              <div  class="flex-box-row li-content-tesk-div-info">
+                <div class="margin-right-20">
+                  <span><i  class="fa fa-folder-o"></i></span>
+                  <span>programacao</span>
+                </div>
+                <div class="margin-right-20">
+                  <span><i  class="fa fa-bell-o"></i></span>
+                </div>
+                <div class="margin-right-20">
+                  <span><i  class="fa fa-calendar"></i></span>
+                  <span>Domingo, Fevereiro 17</span>
+                </div>
+                <div class="margin-right-20">
+                  <span><i  class="fa fa fa-circle-o"></i></span>
+                  <span>Categoria</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="div-content-tesk-star">
+            <span>
+              <span><i  class="fa fa fa-star-o"></i></span>
+            </span>
+          </div>
+      </li>
+      <li class="li-content-tesk flex-box-row flex-box-align-items-center justify-content-space-between border-botton task-li">
+        <div class="flex-box-row flex-box-align-items-center">
+          <div>
+            <span>
+              <i  class="fa fa-circle-o"></i>
+            </span>
+          </div>
+          <div class="margin-left-20 ">
+            <p class="li-content-tesk-p-title">
+              Trabalhando com java
+            </p>
+            <div  class="flex-box-row li-content-tesk-div-info">
+              <div class="margin-right-20">
+                <span><i  class="fa fa-folder-o"></i></span>
+                <span>programacao</span>
+              </div>
+              <div class="margin-right-20">
+                <span><i  class="fa fa-bell-o"></i></span>
+              </div>
+              <div class="margin-right-20">
+                <span><i  class="fa fa-calendar"></i></span>
+                <span>Domingo, Fevereiro 17</span>
+              </div>
+              <div class="margin-right-20">
+                <span><i  class="fa fa fa-circle-o"></i></span>
+                <span>Categoria</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-content-tesk-star">
+          <span>
+            <span><i  class="fa fa fa-star-o"></i></span>
+          </span>
+        </div>
+    </li>
+        
+      </ul>
+
+    </section>
+    <!-- Fim-Container-Right -->
+  </div>
+  <!-- Fim Container-->
+  
+  <script src="assets/js/vue.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
