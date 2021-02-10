@@ -37,8 +37,26 @@ span{
 .border-botton{
   border-bottom: 1px solid rgb(112,112,112,0.2);
 }
+.border-top{
+  border-top: 1px solid rgb(112,112,112,0.1);
+}
+
+.task-li{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content:space-between;
+  border-bottom: 1px solid rgb(112,112,112,0.2);
+}
 .task-li:hover{
   background-color: #DEDEDE;
+  cursor: pointer;
+}
+.span-btn-pulus{
+  padding:5px 10px;
+}
+.span-btn-pulus:hover {
+  color:#FF8700 ;
 }
 /*************************
 *  Estilizando o cabeçalho
@@ -134,6 +152,8 @@ header{
 .nav-header-right-info .div-plus-sign span{
   font-size: 1.25em;
   color:#FF8700;
+  cursor: pointer;
+  padding: 5px;
 }
 .nav-header-right-info .nav-header-right-info-name{
   font-family: 'Roboto Mono', monospace;
@@ -200,7 +220,7 @@ header{
   margin-left: 10px;
 }
 .li-border{
-  border-bottom: 1px solid rgb(112,112,112,0.5);
+  border-bottom: 1px solid rgb(112,112,112,0.2);
 }
 .button-dropdown{
   display: block;
@@ -263,13 +283,14 @@ header{
   padding-top: 30px;
   padding-right: 30px;
   box-sizing: border-box;
-  /*overflow-y: scroll;*/
+  overflow-y: scroll;
     
 }
 .container-task{
   box-sizing: border-box; 
   
 }
+
 .container-task-titulo{
   font-family: 'PT Serif', serif;
   font-size: 1.5em;
@@ -299,6 +320,90 @@ header{
 .p-add-tarefa:hover .p-add-tarefa-text-i{
   color:#FF8700;
 }
+
+/************************
+* adicionando nova tarefa
+*na div nova
+***********************/
+.div-add-tarefa{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border: solid 1px #A9AEB3;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.div-add-tarefa-input{
+  margin-bottom:15px ;
+}
+.div-add-tarefa-input input[type="text"]{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 286px;
+  height: 30px;
+  /*background-color: #DEDEDE;*/
+  border: 0px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875em;
+  color: #222222;
+  box-sizing: border-box;
+  padding-left: 10px;
+  /*border: 1px solid rgb(112,112,112);
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+}
+.div-add-tarefa-input input[type="text"]:focus{
+  outline: none;
+}
+input::-webkit-input-placeholder {
+  font-size: 0.875em;
+}
+.div-add-tarefa-info{
+  display: flex;
+  justify-content: space-between;
+}
+.div-add-tarefa-info-left{
+  display: flex;
+ 
+}
+.div-add-tarefa-info-right{
+  padding-right: 10px;
+  align-items: center;
+}
+.div-add-tarefa-style-btn{
+  border: solid 1px #A9AEB3;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+.div-add-tarefa-style-btn-save{
+  padding: 5px;
+  cursor: pointer;
+  color:#fff;
+  background-color: #FECA00;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.div-add-tarefa-style-btn-cancelar{
+  padding: 5px;
+  cursor: pointer;
+}
+.div-add-tarefa-style-btn-cancelar:hover{
+  color:red;
+}
+.div-add-tarefa-style-btn:hover{
+  background-color: #DEDEDE;
+}
+.div-add-tarefa-style-cololor{
+  background-color: #101010;
+  color:#FFf;
+  border:none !important;
+}
+/***********/
 .li-content-tesk{
   padding: 10px;
   box-sizing: border-box;
@@ -316,4 +421,150 @@ header{
   font-size: 0.75em;
   color: #222222;
   /*<i class="fas fa-check-circle"></i>*/
+}
+
+
+/**********************
+*Modal adicionar task 
+*rapida
+*********************/
+
+.modal::before{
+  content:"";
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,.8);
+  
+}
+.modal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top:0px;
+  left:0px;
+  width: 100%;
+  padding: 80px;
+  box-sizing: border-box;
+  
+}
+
+.modal-container{
+  position: relative;
+  z-index: 1;
+  width: 900px;
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 40px;
+}
+.modal-container-btn-close{
+  position: absolute;
+  right: 0;
+  top: -50px;
+  padding:5px 10px ;
+  background-color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal-add-titulo{
+  padding-bottom: 20px;
+}
+.modal-add-titulo p{
+  font-family: 'PT Serif', serif;
+  font-size: 1.5em;
+  color:#101010;
+  }
+
+/**********************
+*Modal adicionar novo 
+*projeto
+*********************/
+
+.modal-projeto::before{
+  content:"";
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,.8);
+}
+
+.modal-projeto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top:0px;
+  left:0px;
+  width: 100%;
+  padding: 80px;
+  box-sizing: border-box;
+  
+}
+
+.modal-projeto-container{
+  position: relative;
+  z-index: 1;
+  width: 440px;
+  /*background-color: #fff;*/
+  margin-top: 40px;
+  background-color: #DEDEDE;
+  
+}
+
+.modal-projeto-container-titulo{
+  padding: 20px;
+}
+.modal-projeto-container-titulo p{
+  font-family: 'PT Serif', serif;
+  font-size: 1.5em;
+  color:#101010;
+}
+.modal-projeto-container-content{
+  background-color: #fff;
+  padding:20px;
+}
+.modal-projeto-container-content > div{
+  margin-bottom: 10px;
+}
+.modal-projeto-container-content label{
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875em;
+  color: #222222;
+  padding: 5px 0px;
+}
+
+.modal-projeto-container-content input{
+  display: block;
+  width: 100%;
+  height: 30px;
+  border: 2px solid #DEDEDE;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875em;
+  color: #222222;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+  /*border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;*/
+} 
+.modal-projeto-container-content input:focus{
+  outline: none;
+}
+
+.modal-projeto-div-btn{
+  padding-top: 20px;
+}
+.modal-projeto-container-content-text{
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 20px !important;
+  color: rgba(0,0,0,.5);
 }

@@ -10,301 +10,319 @@
   <title>Users</title>
 </head>
 <body>
-  <!-- Cabeçalho-->
-  <header>
-    <nav class="nav-header">
-      <div class="nav-header-left">
-        <div class="div-munu-hamburg">
-          <input type="checkbox" id="menu-check">
-          <label  for="menu-check">
-            <i class="fa fa-bars 2x" id="icon-menu">
-            </i>
-          </label>
-        </div>
-        <div class="logo">
-          <a href="">
-            <span>L</span>Task
-          </a>
-        </div>
-      </div>
-      <div class="nav-header-right">
-        <div class="div-search">
-          <span class="span-icon-search">
-            <i  class="fa fa-search fa-1x fa-rotate-90"></i>
-          </span>
-          <input type="text" placeholder="Buscar">  
-        </div>
-        <div class="nav-header-right-info">
-           <div class="div-plus-sign">
-             <span>
-              <i  class="fa fa-plus "></i>
-             </span>
-           </div>
-           <div class="nav-header-right-info-name">
-             <span>Claudio João Andre ...</span>
-           </div>
-           <div class="div-img-perfil">
-             <img src="" alt="">
-           </div>
-        </div>   
-      </div>
-    </nav>
-  </header>
-  <!-- Fim Cabeçalho-->
-
-  <!-- Container-->
-  <div class="continer" id="app">
-    <!-- Container-Left -->
-    <section class="continer-left">
-      <nav class="continer-left-nav">
-        <ul>
-          <li class="continer-left-nav-li">
-            <a href="" class="">
-              <p>
-                <i  class="fa fa-home" aria-hidden="true"></i>
-                <span>Home</span>
-              </p>
-            </a>
-          </li>
-          <li class="continer-left-nav-li">
+  <div id="app">
+    <!-- Cabeçalho-->
+    <header>
+      <nav class="nav-header">
+        <div class="nav-header-left">
+          <div class="div-munu-hamburg">
+            <input type="checkbox" id="menu-check">
+            <label  for="menu-check">
+              <i class="fa fa-bars 2x" id="icon-menu">
+              </i>
+            </label>
+          </div>
+          <div class="logo">
             <a href="">
-              <p>
-                <i  class="fa fa-list"></i>
-                <span>Task</span>
-              </p>
+              <span>L</span>Task
             </a>
-          </li>
-          <li class="continer-left-nav-li">
-            <a href="">
-              <p>
-                <i  class="fa fa-star "></i>
-                <span>Importantes</span>
-              </p>
-            </a>
-          </li>
-          <li class="li-border">
-            <button class="button-dropdown continer-left-nav-li" v-on:click="activate=!activate">
-              <p>
-                <i v-bind:class="[activate?'fa fa-folder-open':'fa fa-folder' ]"></i>
-                <span>Projetos</span>
-              </p>
-              <span class="margin-right-10">
+          </div>
+        </div>
+        <div class="nav-header-right">
+          <div class="div-search">
+            <span class="span-icon-search" >
+              <i  class="fa fa-search fa-1x fa-rotate-90"></i>
+            </span>
+            <input type="text" placeholder="Buscar">  
+          </div>
+          <div class="nav-header-right-info">
+            <div class="div-plus-sign">
+              <span v-on:click="activaTarefaRapida= !activaTarefaRapida">
                 <i  class="fa fa-plus "></i>
-               </span>
-            </button>
-            <ul class="ul-dropdown" v-if="activate">
-              <li class="continer-left-nav-li">
-                <a href="">
-                  <p>
-                    <span class="ul-dropdown-span-i">
-                      <i  class="fa fa-circle"></i>
-                    </span>
-                    <span class="ul-dropdown-span-text" >
-                      Trabalhando com Java 
-                    </span>
-                  </p>
-                </a>
-              </li>
-              <li class="continer-left-nav-li">
-                <a href="">
-                  <p>
-                    <span class="ul-dropdown-span-i">
-                      <i  class="fa fa-circle"></i>
-                    </span>
-                    <span class="ul-dropdown-span-text" >
-                      Algoritmos e estruturasde dados
-                    </span>
-                  </p>
-                </a>
-              </li>
-              <li class="continer-left-nav-li">
-                <a href="">
-                  <p>
-                    <span class="ul-dropdown-span-i">
-                      <i  class="fa fa-circle"></i>
-                    </span>
-                    <span class="ul-dropdown-span-text">
-                      Entendendo servidores
-                    </span>
-                  </p>
-                </a>
-              </li>
-            </ul>  
-          </li>
-        </ul>
-      </nav>
-
-    </section>
-    <!-- Fim-Container-Left -->
-
-    <!-- Container-Right -->
-    <section class="continer-right">
-      <div class="container-task">
-        <h2 class="container-task-titulo">Tasks</h2>
-        <div>
-          <p class="p-add-tarefa">
-            <span class="p-add-tarefa-text-i">
-              <i  class="fa fa-plus "></i>
-            </span>
-            <span class="p-add-tarefa-text">
-              Adicionar tarefa
-            </span>
-          </p>
+              </span>
+            </div>
+            <div class="nav-header-right-info-name">
+              <span>Claudio João Andre ...</span>
+            </div>
+            <div class="div-img-perfil">
+              <img src="" alt="">
+            </div>
+          </div>   
         </div>
-      </div>
-      <ul class="">
-        <li class="li-content-tesk flex-box-row flex-box-align-items-center justify-content-space-between border-botton task-li">
-            <div class="flex-box-row flex-box-align-items-center">
-              <div>
-                <span>
-                  <i  class="fa fa-circle-o"></i>
+      </nav>
+    </header>
+    <!-- Fim Cabeçalho-->
+
+    <!-- Container-->
+    <div class="continer" >
+      <!-- Container-Left -->
+      <section class="continer-left">
+        <nav class="continer-left-nav">
+          <ul>
+            <li class="continer-left-nav-li">
+              <a href="" class="">
+                <p>
+                  <i  class="fa fa-home" aria-hidden="true"></i>
+                  <span>Home</span>
+                </p>
+              </a>
+            </li>
+            <li class="continer-left-nav-li">
+              <a href="">
+                <p>
+                  <i  class="fa fa-list"></i>
+                  <span>Task</span>
+                </p>
+              </a>
+            </li>
+            <li class="continer-left-nav-li">
+              <a href="">
+                <p>
+                  <i  class="fa fa-star-o "></i>
+                  <span>Importantes</span>
+                </p>
+              </a>
+            </li>
+            <li class="li-border">
+              <button class="button-dropdown continer-left-nav-li" v-on:click="activate=!activate">
+                <p>
+                  <i v-bind:class="[activate?'fa fa-folder-open-o':'fa fa-folder-o' ]"></i>
+                  <span>Projetos</span>
+                </p>
+                <span class="" v-on:click="activaModalProjeto= !activaModalProjeto">
+                  <i  class="fa fa-plus span-btn-pulus"></i>
+                </span>
+              </button>
+              <ul class="ul-dropdown" v-if="activate">
+                <li class="continer-left-nav-li">
+                  <a href="">
+                    <p>
+                      <span class="ul-dropdown-span-i">
+                        <i  class="fa fa-circle"></i>
+                      </span>
+                      <span class="ul-dropdown-span-text" >
+                        Trabalhando com Java 
+                      </span>
+                    </p>
+                  </a>
+                </li>
+                <li class="continer-left-nav-li">
+                  <a href="">
+                    <p>
+                      <span class="ul-dropdown-span-i">
+                        <i  class="fa fa-circle"></i>
+                      </span>
+                      <span class="ul-dropdown-span-text" >
+                        Algoritmos e estruturasde dados
+                      </span>
+                    </p>
+                  </a>
+                </li>
+                <li class="continer-left-nav-li">
+                  <a href="">
+                    <p>
+                      <span class="ul-dropdown-span-i">
+                        <i  class="fa fa-circle"></i>
+                      </span>
+                      <span class="ul-dropdown-span-text">
+                        Entendendo servidores
+                      </span>
+                    </p>
+                  </a>
+                </li>
+              </ul>  
+            </li>
+          </ul>
+        </nav>
+
+      </section>
+      <!-- Fim-Container-Left -->
+
+      <!-- Container-Right -->
+      <section class="continer-right">
+        <div class="container-task">
+          <h2 class="container-task-titulo">Tasks</h2>
+          <div>
+            <p class="p-add-tarefa" v-on:click="activeTarefa= !activeTarefa" v-if="!activeTarefa">
+              <span class="p-add-tarefa-text-i">
+                <i  class="fa fa-plus "></i>
+              </span>
+              <span class="p-add-tarefa-text">
+                Adicionar tarefa
+              </span>
+            </p>
+          </div>
+          <div class="div-add-tarefa" v-if="activeTarefa">
+            <div class="div-add-tarefa-input">
+              <input type="text" placeholder="Nome da tarefa" autofocus>
+            </div>
+            <div class="div-add-tarefa-info">
+              <div class="div-add-tarefa-info-left">
+                <div class="margin-right-20 div-add-tarefa-style-btn">
+                  <span><i  class="fa fa-folder-o"></i></span>
+                  <span> Escolher Projeto</span>
+                </div>
+                <div class="margin-right-20 div-add-tarefa-style-btn">
+                  <span><i  class="fa fa-calendar"></i></span>
+                  <span> Agendar</span>
+                </div>
+                <div class="margin-right-20 div-add-tarefa-style-btn">
+                  <span><i  class="fa  fa-bell-o"></i></span>
+                </div>
+                <div class="margin-right-20 div-add-tarefa-style-btn">
+                  <span><i  class="fa fa-circle-o"></i></span>
+                  <span> Categoria</span>
+                </div>
+              </div>
+              <div class="div-add-tarefa-info-right">
+                <span class="margin-right-20 div-add-tarefa-style-btn-save" v-on:click="activeTarefa= !activeTarefa">
+                  Adicionar Terefa
+                </span>
+                <span class="div-add-tarefa-style-btn-cancelar" v-on:click="activeTarefa= !activeTarefa">
+                  Cancelar
                 </span>
               </div>
-              <div class="margin-left-20 ">
-                <p class="li-content-tesk-p-title">
-                  Trabalhando com java
-                </p>
-                <div  class="flex-box-row li-content-tesk-div-info">
-                  <div class="margin-right-20">
-                    <span><i  class="fa fa-folder-o"></i></span>
-                    <span>programacao</span>
-                  </div>
-                  <div class="margin-right-20">
-                    <span><i  class="fa fa-bell-o"></i></span>
-                  </div>
-                  <div class="margin-right-20">
-                    <span><i  class="fa fa-calendar"></i></span>
-                    <span>Domingo, Fevereiro 17</span>
-                  </div>
-                  <div class="margin-right-20">
-                    <span><i  class="fa fa fa-circle-o"></i></span>
-                    <span>Categoria</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="div-content-tesk-star">
-              <span>
-                <span><i  class="fa fa fa-star-o"></i></span>
-              </span>
-            </div>
-        </li>
-        <li class="li-content-tesk flex-box-row flex-box-align-items-center justify-content-space-between border-botton task-li">
-          <div class="flex-box-row flex-box-align-items-center">
-            <div>
-              <span>
-                <i  class="fa fa-circle-o"></i>
-              </span>
-            </div>
-            <div class="margin-left-20 ">
-              <p class="li-content-tesk-p-title">
-                Trabalhando com java
-              </p>
-              <div  class="flex-box-row li-content-tesk-div-info">
-                <div class="margin-right-20">
-                  <span><i  class="fa fa-folder-o"></i></span>
-                  <span>programacao</span>
-                </div>
-                <div class="margin-right-20">
-                  <span><i  class="fa fa-bell-o"></i></span>
-                </div>
-                <div class="margin-right-20">
-                  <span><i  class="fa fa-calendar"></i></span>
-                  <span>Domingo, Fevereiro 17</span>
-                </div>
-                <div class="margin-right-20">
-                  <span><i  class="fa fa fa-circle-o"></i></span>
-                  <span>Categoria</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="div-content-tesk-star">
-            <span>
-              <span><i  class="fa fa fa-star-o"></i></span>
-            </span>
-          </div>
-        </li>
-        <li class="li-content-tesk flex-box-row flex-box-align-items-center justify-content-space-between border-botton task-li">
-          <div class="flex-box-row flex-box-align-items-center">
-            <div>
-              <span>
-                <i  class="fa fa-circle-o"></i>
-              </span>
-            </div>
-            <div class="margin-left-20 ">
-              <p class="li-content-tesk-p-title">
-                Trabalhando com java
-              </p>
-              <div  class="flex-box-row li-content-tesk-div-info">
-                <div class="margin-right-20">
-                  <span><i  class="fa fa-folder-o"></i></span>
-                  <span>programacao</span>
-                </div>
-                <div class="margin-right-20">
-                  <span><i  class="fa fa-bell-o"></i></span>
-                </div>
-                <div class="margin-right-20">
-                  <span><i  class="fa fa-calendar"></i></span>
-                  <span>Domingo, Fevereiro 17</span>
-                </div>
-                <div class="margin-right-20">
-                  <span><i  class="fa fa fa-circle-o"></i></span>
-                  <span>Categoria</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="div-content-tesk-star">
-            <span>
-              <span><i  class="fa fa fa-star-o"></i></span>
-            </span>
-          </div>
-      </li>
-      <li class="li-content-tesk flex-box-row flex-box-align-items-center justify-content-space-between border-botton task-li">
-        <div class="flex-box-row flex-box-align-items-center">
-          <div>
-            <span>
-              <i  class="fa fa-circle-o"></i>
-            </span>
-          </div>
-          <div class="margin-left-20 ">
-            <p class="li-content-tesk-p-title">
-              Trabalhando com java
-            </p>
-            <div  class="flex-box-row li-content-tesk-div-info">
-              <div class="margin-right-20">
-                <span><i  class="fa fa-folder-o"></i></span>
-                <span>programacao</span>
-              </div>
-              <div class="margin-right-20">
-                <span><i  class="fa fa-bell-o"></i></span>
-              </div>
-              <div class="margin-right-20">
-                <span><i  class="fa fa-calendar"></i></span>
-                <span>Domingo, Fevereiro 17</span>
-              </div>
-              <div class="margin-right-20">
-                <span><i  class="fa fa fa-circle-o"></i></span>
-                <span>Categoria</span>
-              </div>
             </div>
           </div>
         </div>
-        <div class="div-content-tesk-star">
-          <span>
-            <span><i  class="fa fa fa-star-o"></i></span>
-          </span>
-        </div>
-    </li>
         
-      </ul>
+        <ul class="">
+          <li v-for = "task in tasks" v-bind:key="task.id" class="li-content-tesk  task-li">
+              <div class="flex-box-row flex-box-align-items-center">
+                <div>
+                  <span>
+                    <i  class="fa fa-circle-o"></i>
+                  </span>
+                </div>
+                <div class="margin-left-20 ">
+                  <p class="li-content-tesk-p-title">
+                    {{task.titulo}}
+                  </p>
+                  <div  class="flex-box-row li-content-tesk-div-info">
+                    <div class="margin-right-20">
+                      <span><i  class="fa fa-folder-o"></i></span>
+                      <span>{{task.projeto}}</span>
+                    </div>
+                    <div class="margin-right-20">
+                      <span><i  class="fa fa-bell-o"></i></span>
+                    </div>
+                    <div class="margin-right-20">
+                      <span><i  class="fa fa-calendar"></i></span>
+                      <span>{{task.data_execucao}}</span>
+                    </div>
+                    <div class="margin-right-20">
+                      <span><i  class="fa fa fa-circle-o"></i></span>
+                      <span>{{task.categoria}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="div-content-tesk-star">
+                <span>
+                  <span><i  class="fa fa fa-star-o"></i></span>
+                </span>
+              </div>
+          </li>      
+        </ul>
 
-    </section>
-    <!-- Fim-Container-Right -->
+      </section>
+      <!-- Fim-Container-Right -->
+
+      <!-- Fim Seção Task -Rapido-->
+      <section class="modal" v-if="activaTarefaRapida">
+        <div class="modal-container">
+          <!--<span class="modal-container-btn-close" v-on:click="activaTarefaRapida= !activaTarefaRapida">
+            <span><i  class="fa  fa-times"></i></span>
+          </span>-->
+          <div class="modal-add-titulo">
+            <p>Adicionar Tarefa rapida</p>
+          </div>
+          <div class="modal-container-tarefa">
+            <div class="div-add-tarefa" >
+              <div class="div-add-tarefa-input">
+                <input type="text" placeholder="Nome da tarefa" autofocus>
+              </div>
+              <div class="div-add-tarefa-info">
+                <div class="div-add-tarefa-info-left">
+                  <div class="margin-right-20 div-add-tarefa-style-btn">
+                    <span><i  class="fa fa-folder-o"></i></span>
+                    <span> Escolher Projeto</span>
+                  </div>
+                  <div class="margin-right-20 div-add-tarefa-style-btn">
+                    <span><i  class="fa fa-calendar"></i></span>
+                    <span> Agendar</span>
+                  </div>
+                  <div class="margin-right-20 div-add-tarefa-style-btn">
+                    <span><i  class="fa  fa-bell-o"></i></span>
+                  </div>
+                  <div class="margin-right-20 div-add-tarefa-style-btn">
+                    <span><i  class="fa fa-circle-o"></i></span>
+                    <span> Categoria</span>
+                  </div>
+                </div>
+                <div class="div-add-tarefa-info-right">
+                  <span class="margin-right-20 div-add-tarefa-style-btn-save" v-on:click="activeTarefa= !activeTarefa">
+                    Adicionar Terefa
+                  </span>
+                  <span class="div-add-tarefa-style-btn-cancelar" v-on:click="activaTarefaRapida= !activaTarefaRapida">
+                    Cancelar
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      <!-- Fim Container-->
+
+       <!-- Seção Adicionar Projeto -->
+       <section class="modal-projeto" v-if="!activaModalProjeto">
+        
+        <div class="modal-projeto-container">
+          <!--<span class="modal-container-btn-close" v-on:click="activaModalProjeto= !activaModalProjeto">
+            <span><i  class="fa  fa-times"></i></span>
+          </span>-->
+          <div class="modal-projeto-container-titulo border-botton">
+            <p>Adicionar Novo Projeto</p>
+          </div>
+          <div class="modal-projeto-container-content">
+            <div>
+              <label for="">Nome do projeto</label>
+              <input type="text" placeholder="Ex: Trabalhando com java">
+            </div>
+            <div>
+              <label for="">cor do projeto</label>
+              <input type="text" placeholder="Ex: seleciona a cor do projeto">
+            </div>
+            <div class="modal-projeto-container-content-text">
+              <p>
+                Projetos são a melhor forma de organizar atividades
+                que estão relacionadas.
+              </p>
+            </div>
+            <div>
+              <div class="modal-projeto-div-btn border-top">
+                <span class="margin-right-20 div-add-tarefa-style-btn-save" v-on:click="activaModalProjeto= !activaModalProjeto">
+                  Adicionar Projeto
+                </span>
+                <span class="div-add-tarefa-style-btn-cancelar" v-on:click="activaModalProjeto= !activaModalProjeto">
+                  Cancelar
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Fim Seção modal-projeto-container-tontent -->
+      
+        </div>
+      </section>
+      <!-- Fim Seção Adicionar Projeto -->
+      
+    </div>
+    <!-- Fim Container-->
+
   </div>
-  <!-- Fim Container-->
-  
+  <!-- Fim app-->
   <script src="assets/js/vue.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
