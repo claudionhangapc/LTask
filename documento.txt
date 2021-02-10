@@ -44,3 +44,6 @@ senha: claudioteste2018 ou Claudioteste2018
 https://to-do.office.com/tasks/
 
 https://www.iconfinder.com/search/?q=home
+
+link select option
+https://stackoverflow.com/questions/11890597/is-it-possible-to-add-div-or-span-inside-an-option-tag/11890623
