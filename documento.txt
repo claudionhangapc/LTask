@@ -47,3 +47,17 @@ https://www.iconfinder.com/search/?q=home
 
 link select option
 https://stackoverflow.com/questions/11890597/is-it-possible-to-add-div-or-span-inside-an-option-tag/11890623
+
+
+link com cores usadas no projeto
+https://mxstudio.com.br/tabela-cores-web/
+
+https://thdoan.github.io/bootstrap-select/examples.html
+/**********
+*claendario-
+**********/
+
+https://www.htmlelements.com/demos/calendar/overview/
+https://github.com/GramThanos/jsCalendar/
+https://www.htmlelements.com/docs/calendar/
+pesquisar por date picker
