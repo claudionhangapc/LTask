@@ -61,3 +61,9 @@ https://www.htmlelements.com/demos/calendar/overview/
 https://github.com/GramThanos/jsCalendar/
 https://www.htmlelements.com/docs/calendar/
 pesquisar por date picker
+
+==========bons tutorias==========
+https://blog.logrocket.com/
+
+=======================================landing page==================================
+https://logrocket.com/
