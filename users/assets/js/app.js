@@ -18,10 +18,34 @@ const aside = new Vue({
   el:"#aside",
   components:{
     "comp-aside":CompAside
+  },
+  methods:{
+    ativaModalProjetoFromSide(){
+      modalContainer.ativaModalProjetoFunction();
+    }
   }
 })
 
 
+// Componentes para a modal
+const modalContainer = new Vue({
+  el:"#modal-container",
+  components:{
+    "comp-modal-projeto":CompModalProjeto,
+    "comp-modal-task": CompModalTask
+  },
+  data:{
+    ativaModalProjeto:false,
+  },
+  methods:{
+    ativaModalProjetoFunction(){
+      this.ativaModalProjeto = true;
+      alert(this.ativaModalProjeto);
+    }
+  }
+})
+
+/*
 const app = new Vue({
   el:"#app",
   data:{
@@ -36,7 +60,11 @@ const app = new Vue({
   },
  components:{
   "comp-modal-projeto":CompModalProjeto,
-  "comp-modal-task": CompModalTask
+  "comp-modal-task": CompModalTask,
  }
 });
+*/
+
+
+
 

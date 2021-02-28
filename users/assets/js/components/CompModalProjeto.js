@@ -1,12 +1,13 @@
 const CompModalProjeto = {
+  props:['ativamodal'],
   template:`
-  <section class="modal-projeto" v-if="ativaModalProjeto" v-on:click=" fecharModalProjeto">
+  <section class="modal-projeto" v-if="ativamodal" v-on:click=" fecharModalProjeto">
         <div class="modal-projeto-container">
           <!--<span class="modal-container-btn-close" v-on:click="">
             <span><i  class="fa  fa-times"></i></span>
           </span>-->
           <div class="modal-projeto-container-titulo border-botton">
-            <p>Adicionar Novo Projeto</p>
+            <p>Adicionar Novo Projeto {{ativamodal}}</p>
           </div>
           <div class="modal-projeto-container-content">
             <div>
@@ -37,7 +38,7 @@ const CompModalProjeto = {
                 <span class="margin-right-20 div-add-tarefa-style-btn-save" v-on:click="AdicionarNovorProjeto(projetoNovo)">
                   Adicionar Projeto
                 </span>
-                <span class="div-add-tarefa-style-btn-cancelar" v-on:click="ativaModalProjeto=false">
+                <span class="div-add-tarefa-style-btn-cancelar" v-on:click="fecharModalProjetoCancelar">
                   Cancelar
                 </span>
               </div>
@@ -51,16 +52,20 @@ const CompModalProjeto = {
   data:function(){
     return{
       projetoNovo:{id:20,nome:"",cor:"",listaTask:[]},
-      ativaModalProjeto:false
+      ativaModalProjeto:true
     }
   },
   methods:{
     fecharModalProjeto:function(event){
       if(event.target===event.currentTarget){
-        this.ativaModalProjeto=false;
+        this.ativamodal=false;
       }
+    },
+    fecharModalProjetoCancelar(){
+      this.ativamodal=false;
     }
   }
+  
 }
 
 export default CompModalProjeto;

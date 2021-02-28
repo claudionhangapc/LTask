@@ -37,7 +37,10 @@ const CompMenu = {
     </div>   
   </div>
 </nav>
-  `
+  `,
+  methods:{
+    
+  }
 }
 
 export default CompMenu;

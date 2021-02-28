@@ -21,7 +21,7 @@
     <div class="continer" >
       <!-- Container-Left -->
       <section class="continer-left" id="aside"> 
-        <comp-aside></comp-aside>
+        <comp-aside v-on:abrirmodal="ativaModalProjetoFromSide" ativamodal="oiiiii"></comp-aside>
       </section>
       <!-- Fim-Container-Left -->
 
@@ -115,20 +115,23 @@
       </section>
       <!-- Fim-Container-Right -->
 
-      <!-- Fim Seção Task -Rapido-->
-        <comp-modal-task>
+      <div id="modal-container">
+        <!-- Fim Seção Task -Rapido-->
           
-        </comp-modal-task>
-      <!-- Fim Container-->
+          <comp-modal-task >
+            
+          </comp-modal-task>
+        <!-- Fim Container-->
 
-       <!-- Seção Adicionar Projeto -->
-     
-        <comp-modal-projeto>
-          
-        </comp-modal-projeto>
+        <!-- Seção Adicionar Projeto -->
       
-      <!-- Fim Seção Adicionar Projeto -->
-      
+          <comp-modal-projeto v-bind:ativamodal="ativaModalProjeto">
+            
+          </comp-modal-projeto>
+        
+        <!-- Fim Seção Adicionar Projeto -->
+      </div>
+
     </div>
     <!-- Fim Container-->
 

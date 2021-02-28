@@ -47,7 +47,7 @@ const CompModalTask ={
   `,
   data:function(){
     return{
-      activaModalTask:true
+      activaModalTask:false
     }
   },
   methods:{

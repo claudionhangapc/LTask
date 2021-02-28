@@ -1,4 +1,6 @@
 const CompAside ={
+  name:"comp-aside",
+  props:['ativa'],
   template:`
     <nav class="continer-left-nav">
     <ul>
@@ -32,7 +34,7 @@ const CompAside ={
             <i v-bind:class="[activateUlDropDown?'fa fa-folder-open-o':'fa fa-folder-o' ]"></i>
             <span>Projetos</span>
           </p>
-          <span class="" v-on:click="activaModalProjeto= !activaModalProjeto">
+          <span class="" v-on:click="abrirModalProjeto">
             <i  class="fa fa-plus span-btn-pulus"></i>
           </span>
         </button>
@@ -59,9 +61,6 @@ const CompAside ={
   data:function(){
     return{
       activateUlDropDown:false,
-      activaModalProjeto:false,
-      corAtualProjeto:'',
-      projetoNovo:{id:20,nome:"",cor:"",listaTask:[]},
       projetos:[
         {id:1,nome:"programacao",cor:"#006400",listaTask:[1,2,3,5]
         },
@@ -75,8 +74,13 @@ const CompAside ={
   methods:{
     AdicionarNovorProjeto(projeto){
       this.projetos.push(projeto);
+    },
+    abrirModalProjeto(){
+      this.$emit("abrirmodal");
+      //console.log('teste');
     }
-  },
+   
+  }
 }
 
 export default CompAside;
