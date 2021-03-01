@@ -24,7 +24,7 @@ const CompMenu = {
     </div>
     <div class="nav-header-right-info">
       <div class="div-plus-sign">
-        <span v-on:click="activaTarefaRapida= !activaTarefaRapida">
+        <span v-on:click="abrirModalTask">
           <i  class="fa fa-plus "></i>
         </span>
       </div>
@@ -39,7 +39,9 @@ const CompMenu = {
 </nav>
   `,
   methods:{
-    
+    abrirModalTask(){
+     this.$emit("abrirmodal");
+    }
   }
 }
 

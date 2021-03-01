@@ -1,6 +1,7 @@
 const CompModalTask ={
+  props:['ativamodal'],
   template:`
-    <section class="modal" v-if="activaModalTask" v-on:click="fecharModalTask">
+    <section class="modal" v-if="ativamodal" v-on:click="fecharModalTask">
         <div class="modal-container">
         <!--<span class="modal-container-btn-close" v-on:click="activaTarefaRapida= !activaTarefaRapida">
           <span><i  class="fa  fa-times"></i></span>
@@ -35,7 +36,7 @@ const CompModalTask ={
                 <span class="margin-right-20 div-add-tarefa-style-btn-save" v-on:click="">
                   Adicionar Terefa
                 </span>
-                <span class="div-add-tarefa-style-btn-cancelar" v-on:click="activaModalTask = false">
+                <span class="div-add-tarefa-style-btn-cancelar" v-on:click="fecharModalTaskCancelar">
                   Cancelar
                 </span>
               </div>
@@ -47,14 +48,18 @@ const CompModalTask ={
   `,
   data:function(){
     return{
-      activaModalTask:false
+      //activaModalTask:true
     }
   },
   methods:{
     fecharModalTask:function(event){
       if(event.target===event.currentTarget){
-        this.activaModalTask=false;
+        //this.activaModalTask=false;
+        this.fecharModalTaskCancelar();
       }
+    },
+    fecharModalTaskCancelar(){
+      this.$emit('closemodal');
     }
   }
 }

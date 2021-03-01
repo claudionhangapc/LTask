@@ -29,7 +29,7 @@ const CompAside ={
         </a>
       </li>
       <li class="li-border">
-        <button class="button-dropdown continer-left-nav-li" v-on:click="activateUlDropDown=!activateUlDropDown">
+        <button class="button-dropdown continer-left-nav-li" v-on:click="activateUlDropDownFunction">
           <p>
             <i v-bind:class="[activateUlDropDown?'fa fa-folder-open-o':'fa fa-folder-o' ]"></i>
             <span>Projetos</span>
@@ -78,8 +78,14 @@ const CompAside ={
     abrirModalProjeto(){
       this.$emit("abrirmodal");
       //console.log('teste');
+    },
+    activateUlDropDownFunction(event){
+      if(event.target===event.currentTarget){
+        this.activateUlDropDown = !this.activateUlDropDown;
+      }else{
+        this.activateUlDropDown = true;
+      } 
     }
-   
   }
 }
 

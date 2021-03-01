@@ -52,17 +52,19 @@ const CompModalProjeto = {
   data:function(){
     return{
       projetoNovo:{id:20,nome:"",cor:"",listaTask:[]},
-      ativaModalProjeto:true
     }
   },
   methods:{
     fecharModalProjeto:function(event){
       if(event.target===event.currentTarget){
-        this.ativamodal=false;
+        //this.ativamodal=false;
+        this.fecharModalProjetoCancelar();
       }
     },
     fecharModalProjetoCancelar(){
-      this.ativamodal=false;
+      //this.ativamodal=false;
+      this.$emit('closemodal');
+      
     }
   }
   

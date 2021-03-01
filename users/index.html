@@ -13,7 +13,7 @@
   <div id="app">
     <!-- Cabeçalho-->
     <header id="header">
-      <comp-menu></comp-menu>
+      <comp-menu v-on:abrirmodal="abrirModalTask"></comp-menu>
     </header>
     <!-- Fim Cabeçalho-->
 
@@ -26,11 +26,11 @@
       <!-- Fim-Container-Left -->
 
       <!-- Container-Right -->
-      <section class="continer-right">
+      <section class="continer-right" id="container-content">
         <div class="container-task">
           <h2 class="container-task-titulo">Tasks</h2>
           <div>
-            <p class="p-add-tarefa" v-on:click="activeTarefa= !activeTarefa" v-if="!activeTarefa">
+            <p class="p-add-tarefa" v-on:click="activeTarefaFunction" v-if="!activeTarefa">
               <span class="p-add-tarefa-text-i">
                 <i  class="fa fa-plus "></i>
               </span>
@@ -62,10 +62,10 @@
                 </div>
               </div>
               <div class="div-add-tarefa-info-right">
-                <span class="margin-right-20 div-add-tarefa-style-btn-save" v-on:click="activeTarefa= !activeTarefa">
+                <span class="margin-right-20 div-add-tarefa-style-btn-save" v-on:click="">
                   Adicionar Terefa
                 </span>
-                <span class="div-add-tarefa-style-btn-cancelar" v-on:click="activeTarefa= !activeTarefa">
+                <span class="div-add-tarefa-style-btn-cancelar" v-on:click="activeTarefaFunction">
                   Cancelar
                 </span>
               </div>
@@ -118,14 +118,14 @@
       <div id="modal-container">
         <!-- Fim Seção Task -Rapido-->
           
-          <comp-modal-task >
+          <comp-modal-task v-bind:ativamodal="ativaModalTask" v-on:closemodal=" closeModalTask">
             
           </comp-modal-task>
         <!-- Fim Container-->
 
         <!-- Seção Adicionar Projeto -->
       
-          <comp-modal-projeto v-bind:ativamodal="ativaModalProjeto">
+          <comp-modal-projeto v-bind:ativamodal="ativaModalProjeto" v-on:closemodal="closeModalProjeto">
             
           </comp-modal-projeto>
         
