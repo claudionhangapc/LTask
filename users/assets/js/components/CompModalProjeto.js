@@ -65,6 +65,31 @@ const CompModalProjeto = {
       //this.ativamodal=false;
       this.$emit('closemodal');
       
+    },
+    AdicionarNovorProjeto(){
+      if(this.projetoNovo.cor=="" || this.projetoNovo.nome==""){
+        if(this.projetoNovo.cor=="" && this.projetoNovo.nome==""){
+          alert("Por favor, prencha os campos"); 
+        }else{
+          if(this.projetoNovo.cor==""){
+            alert("Por favor, informa a cor do projeto"); 
+          }else{
+            alert("Por favor, informa o nome projeto"); 
+          }
+        } 
+      }else{
+        let projeto={};
+         projeto.nome = this.projetoNovo.nome;
+         projeto.cor = this.projetoNovo.cor;
+         projeto.listaTask = this.projetoNovo.listaTask;
+         this.$emit("addprojetonovo",projeto);
+         //this.setDefaultNovoProjeto();
+        //this.fecharModalProjetoCancelar();
+      }
+    },
+    setDefaultNovoProjeto(){
+      this.projetoNovo.cor="";
+      this.projetoNovo.nome="";
     }
   }
   

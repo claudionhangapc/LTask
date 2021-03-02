@@ -3,6 +3,13 @@ import CompAside from "./components/CompAside.js";
 import CompModalProjeto from "./components/CompModalProjeto.js";
 import CompModalTask from "./components/CompModalTask.js";
 
+import CompHome from "./components/CompHome.js";
+import CompTask from "./components/CompTask.js";
+import CompTaskImportant from "./components/CompTaskImportant.js"
+import CompTaskProjeto from "./components/CompTaskProjeto.js"
+
+
+
 const header = new Vue({
   el:"#header",
   data:{
@@ -16,18 +23,35 @@ const header = new Vue({
       //alert("oi como voce esta caludio nhanga");
       modalContainer. abrirModaltaskFromContainer();
     }
+    
   }
 })
 
 
 const aside = new Vue({
   el:"#aside",
+  data:{
+    projetos:[
+      {id:1,nome:"programacao",cor:"#006400",listaTask:[1,2,3,5]
+      },
+      {id:2,nome:"Analise de sistemas",cor:"#8B0000",listaTask:[1,2,3,5]
+      },
+      {id:3,nome:"sera que este projeto",cor:"#8B3A62",listaTask:[1,2,3,5]
+      }
+      ]
+  },
   components:{
     "comp-aside":CompAside
   },
   methods:{
     ativaModalProjetoFromSide(){
       modalContainer.ativaModalProjetoFunction();
+    },
+    setpage(pagina){
+      containerContent.setPageContent(pagina);
+    },
+    addProjetoNovo(projeto){
+      this.projetos.push(projeto);
     }
   }
 })
@@ -58,29 +82,31 @@ const modalContainer = new Vue({
     abrirModaltaskFromContainer(){
       this.ativaModalTask=true;
       //alert("oi claudio tudo bem com voce ");
+    },
+    addProjetoNovoFromModal(projeto){
+      aside.addProjetoNovo(projeto);
     }
   }
 })
 
 
-const app = new Vue({
+const containerContent = new Vue({
   el:"#container-content",
   data:{
-    activeTarefa:false,
-    tasks:[
-      {id:1,titulo:'Trabalhando com java', projeto:'programação',data_execucao:'Domingo, Fevereiro 17',categoria:'Categoria'},
-      {id:2,titulo:'Trabalhando com java', projeto:'programação',data_execucao:'Domingo, Fevereiro 17',categoria:'Categoria'},
-      {id:3,titulo:'Trabalhando com java', projeto:'programação',data_execucao:'Domingo, Fevereiro 17',categoria:'Categoria'}
-    ],
-    
+    currentPage:'page-task-projeto'
   },
  components:{
-  "comp-modal-projeto":CompModalProjeto,
-  "comp-modal-task": CompModalTask,
+  "page-home":CompHome,
+  "page-task":CompTask,
+  "page-task-important":CompTaskImportant,
+  "page-task-projeto":CompTaskProjeto,
  },
  methods:{
   activeTarefaFunction(){
     this.activeTarefa  = !this.activeTarefa;
+  },
+  setPageContent(page){
+    this.currentPage=page;
   }
  }
 });
